@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class GradingStudents {
 
 	public static void main(String[] args) {
-		Scanner in = new Scanner(System.in);
+	Scanner in = new Scanner(System.in);
         int n = in.nextInt();
         int[] grades = new int[n];
         for(int grades_i=0; grades_i < n; grades_i++){
