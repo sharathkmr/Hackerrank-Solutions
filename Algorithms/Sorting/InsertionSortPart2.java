@@ -20,9 +20,9 @@ public class InsertionSortPart2 {
            // Fill up the code for the required logic here
            // Manipulate the array as required
            // The code for Input/Output is already provided
-		// insertion sorting
-		// considering the 1st element sorted
-		int temp;
+	// insertion sorting
+	// considering the 1st element sorted
+	int temp;
         for (int i = 1; i < ar.length; i++) {
             for(int j = i ; j > 0 ; j--){
                 if(ar[j] < ar[j-1]){
