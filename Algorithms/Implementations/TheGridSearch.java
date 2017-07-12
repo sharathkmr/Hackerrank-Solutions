@@ -14,14 +14,13 @@ public class TheGridSearch {
 	static String[][] SGrid;
 	// to hold sub/small matrix dimensions
 	static int r = 0;
-    static int c = 0;
+    	static int c = 0;
 	// to hold large matrix dimensions
-    static int R = 0;
-    static int C = 0;
+    	static int R = 0;
+    	static int C = 0;
     
     public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		Scanner in = new Scanner(System.in);
+	Scanner in = new Scanner(System.in);
         int t = in.nextInt();
         
         for(int a0 = 0; a0 < t; a0++){
@@ -44,8 +43,8 @@ public class TheGridSearch {
 	
 	static void gridSearch() {
 		LGrid = new String[R][C];
-        SGrid = new String[r][c];
-        // big grid
+        	SGrid = new String[r][c];
+        	// big grid
         for (int i = 0; i < R; i++) {
         	String[] temp = G[i].split("");
             temp = Arrays.copyOfRange(temp, 1, temp.length);
@@ -88,41 +87,33 @@ public class TheGridSearch {
 						}
 						// if count equals the number of elements in sub array
 						// then it breaks out of the loop as we got our result
-						if(count == r*c)
-							break;
-                        else
-                            count = 0;
+						if(count == r*c) {break;}
+						else {count = 0;}
 					}
-					if(count == r*c)
-                        break;
-							
+					if(count == r*c) {break;}		
 				}
 				
-				if(count == r*c)
-					break;
-				
+				if(count == r*c) {break;}	
 			}
-            if(count == r*c)
-                break;
-			     
-		}
-		// final result
-        if(count == r*c)
-        	System.out.println("YES");
-        else
-        	System.out.println("NO");
+            	if(count == r*c) {break;}	     
+	}
+	// final result
+        if(count == r*c) {System.out.println("YES");}
+        	
+        else {System.out.println("NO");}
+        	
 	}
 	
 	// extracts a subgrid from the grid starting at x row and y column
 	// and having rxc rows and columns
 	static String[][] subSet(String[][] LGrid, int x, int y) {
-     	String[][] a = new String[r][c];
+     		String[][] a = new String[r][c];
 		int j =0;
 	    for (int i = x; i < x+r; i++) {
 	    	a[j] = Arrays.copyOfRange(LGrid[i], y, y+c);
 	    	j++;
 	    }
-        return a;
+        	return a;
 	}
 
 }
