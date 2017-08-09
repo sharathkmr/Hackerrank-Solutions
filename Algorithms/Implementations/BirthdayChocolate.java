@@ -1,0 +1,67 @@
+// https://www.hackerrank.com/challenges/the-birthday-bar
+
+import java.util.Scanner;
+
+/*
+input/output
+------------
+5
+1 2 1 3 2 
+3 2
+
+2
+------------------
+6
+1 1 1 1 1 1
+3 2
+
+0
+-----------------
+1
+4
+4 1
+
+1
+
+ */
+
+public class BirthdayChocolate {
+
+	static int solve(int n, int[] s, int d, int m){
+        // Complete this function
+		int count = 0;
+		int rep = m;
+		
+		for (int i = 0; i < s.length; i++) {
+			int j = i;
+			int sum = 0;
+			while(rep > 0 && i <= s.length-m) {
+				sum+= s[j];
+				j++;
+				rep--;
+			}
+			if(sum == d) {
+				count++;
+				
+			}
+			rep = m;
+		//	System.out.println("j "+j+" sum "+sum+" i "+i);
+		}
+		return count;
+    }
+
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        int n = in.nextInt();
+        int[] s = new int[n];
+        for(int s_i=0; s_i < n; s_i++){
+            s[s_i] = in.nextInt();
+        }
+        int d = in.nextInt();
+        int m = in.nextInt();
+        in.close();
+        int result = solve(n, s, d, m);
+        System.out.println(result);
+    }
+
+}
